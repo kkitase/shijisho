@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Shijisho Generator - 指示書ジェネレーター
 
-## Getting Started
+テキストベースの修正指示と対象画像から、矢印付きの視覚的な指示書画像を自動生成する Web アプリケーションです。
 
-First, run the development server:
+## 機能
+
+- 📷 画像のドラッグ＆ドロップアップロード
+- 📝 テキストベースの修正指示入力
+- 🤖 Gemini API による自動座標検出
+- 🎯 Canvas での矢印・注釈描画
+- 💾 生成画像のダウンロード
+
+## セットアップ
+
+### 1. 依存関係のインストール
+
+```bash
+npm install
+```
+
+### 2. 環境変数の設定
+
+`.env.local` ファイルを作成し、Gemini API キーを設定してください:
+
+```bash
+GEMINI_API_KEY=your_api_key_here
+```
+
+### 3. 開発サーバーの起動
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ブラウザで [http://localhost:3000](http://localhost:3000) を開きます。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 使い方
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **画像をアップロード**: 修正が必要な画像をドラッグ＆ドロップまたはクリックして選択
+2. **修正指示を入力**: 修正内容をテキストで入力（改行で区切り）
+3. **指示書を生成**: ボタンをクリックして AI が座標を検出し、矢印付き画像を生成
+4. **ダウンロード**: 生成された指示書画像をダウンロード
 
-## Learn More
+## 技術スタック
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js 14](https://nextjs.org/) (App Router)
+- [Gemini API](https://ai.google.dev/) (画像解析)
+- [Canvas API](https://developer.mozilla.org/ja/docs/Web/API/Canvas_API) (矢印描画)
+- TypeScript
+- CSS Modules

@@ -1,0 +1,25 @@
+.container {
+  width: 100%;
+  overflow: auto;
+  background: white;
+  border: 1px solid #E5E5E5;
+  padding: 1rem;
+  /* 影なし、フラットに */
+}
+
+.canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  background: #F9F9F9;
+  border: 1px solid #E5E5E5;
+  color: var(--text-muted);
+}
