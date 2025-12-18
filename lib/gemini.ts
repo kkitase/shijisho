@@ -8,7 +8,7 @@ export async function analyzeImageWithInstructions(
   mimeType: string,
   instructions: string[]
 ): Promise<Annotation[]> {
-  const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+  const model = genAI.getGenerativeModel({ model: "gemini-3.0-flash-preview" });
 
   const instructionsText = instructions
     .map((inst, i) => `${i + 1}. ${inst}`)

@@ -1,7 +1,7 @@
 # 想いを伝える、指示書。（Shijisho Generator）
 
 テキストベースの修正指示と対象画像から、「想い」の伝わる視覚的な指示書を自動生成するアプリケーションです。
-Gemini 2.0 Flash を活用し、高速かつ的確に修正箇所を特定します。
+Gemini 3.0 Flash を活用し、高速かつ的確に修正箇所を特定します。
 
 ![Screen Shot](public/screenshot.png)
 
@@ -56,7 +56,7 @@ npm run dev
 ## ⚙️ 技術スタック
 
 - **Framework**: [Next.js 16](https://nextjs.org/) (App Router / React 19)
-- **AI Model**: [Google Gemini 2.0 Flash](https://ai.google.dev/)
+- **AI Model**: [Google Gemini 3.0 Flash](https://ai.google.dev/)
 - **Graphics**: HTML5 Canvas API (Interactive Drawing)
 - **Styling**: CSS Modules / Custom Properties
 - **Language**: TypeScript
