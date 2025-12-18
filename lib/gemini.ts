@@ -8,7 +8,7 @@ export async function analyzeImageWithInstructions(
   mimeType: string,
   instructions: string[]
 ): Promise<Annotation[]> {
-  const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
+  const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
   const instructionsText = instructions
     .map((inst, i) => `${i + 1}. ${inst}`)
@@ -53,14 +53,14 @@ Example response:
 
     const response = await result.response;
     const text = response.text();
-    
+
     // Extract JSON from response (handle markdown code blocks)
     let jsonStr = text;
     const jsonMatch = text.match(/```(?:json)?\s*([\s\S]*?)```/);
     if (jsonMatch) {
       jsonStr = jsonMatch[1].trim();
     }
-    
+
     const annotations: Annotation[] = JSON.parse(jsonStr);
     return annotations;
   } catch (error) {
