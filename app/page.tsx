@@ -86,26 +86,26 @@ export default function Home() {
 
   return (
     <div className="container">
-      <header className="header">
-        <h1 className="title font-serif">
-          想いをはかる、指示書。
+      <header className="header" style={{ marginBottom: "4rem", textAlign: "center" }}>
+        <h1 className="title font-serif" style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>
+          想いを伝える、指示書。
         </h1>
-        <p className="subtitle">
-          言葉では零れ落ちてしまう繊細なニュアンスを、AIがそっと視覚化します。<br />
-          あなたの「こうしたい」という純粋な想いを、誠実に届けるために。
+        <p className="subtitle" style={{ fontSize: "1rem", color: "var(--color-text-light)", maxWidth: "600px", margin: "0 auto", lineHeight: "1.8" }}>
+          言葉だけでは伝わりにくい微細なニュアンスを、AIが視覚化します。<br />
+          あなたの「こうしたい」という想いを、まっすぐに届けるために。
         </p>
       </header>
       
-      <main className="main">
+      <main className="main" style={{ gap: "3rem" }}>
         {/* Left Panel - Input */}
         <div className="panel">
           <div className="section">
             <h2 className="panelTitle">
-              <span className="font-serif" style={{ fontSize: "3.5rem", color: "var(--color-accent)", marginRight: "1.5rem", opacity: 0.6, lineHeight: 1 }}>01</span>
-              対象を見つめる
+              <span className="font-serif" style={{ fontSize: "3rem", color: "var(--color-accent)", marginRight: "1rem", opacity: 0.5, lineHeight: 1 }}>01</span>
+              対象を選ぶ
             </h2>
-            <p style={{ fontSize: "1rem", color: "var(--color-text-light)", marginBottom: "2rem" }}>
-              修正を加えたいデザインや画像を、こちらへ置いてください。
+            <p style={{ fontSize: "0.875rem", color: "var(--color-text-light)", marginBottom: "1rem" }}>
+              修正したいデザインや画像を、ここに置いてください。
             </p>
             <ImageUploader
               onImageSelect={handleImageSelect}
@@ -113,13 +113,13 @@ export default function Home() {
             />
           </div>
 
-          <div className="section" style={{ marginTop: "6rem" }}>
+          <div className="section" style={{ marginTop: "3rem" }}>
             <h2 className="panelTitle">
-              <span className="font-serif" style={{ fontSize: "3.5rem", color: "var(--color-accent)", marginRight: "1.5rem", opacity: 0.6, lineHeight: 1 }}>02</span>
-              想いを綴る
+              <span className="font-serif" style={{ fontSize: "3rem", color: "var(--color-accent)", marginRight: "1rem", opacity: 0.5, lineHeight: 1 }}>02</span>
+              想いを記す
             </h2>
-             <p style={{ fontSize: "1rem", color: "var(--color-text-light)", marginBottom: "2rem" }}>
-              どこを、どのように整えたいか。あなたの言葉で記してください。
+             <p style={{ fontSize: "0.875rem", color: "var(--color-text-light)", marginBottom: "1rem" }}>
+              どこを、どう直したいか。いつもの言葉で入力してください。
             </p>
             <InstructionForm
               value={instructions}
@@ -133,8 +133,8 @@ export default function Home() {
           {error && <div className="error">{error}</div>}
 
           {annotations.length > 0 && (
-            <div className="section" style={{ marginTop: "4rem" }}>
-              <h3 className="panelTitle" style={{ fontSize: "1.5rem", borderBottom: "none" }}>紡ぎ出された想い</h3>
+            <div className="section" style={{ marginTop: "2rem" }}>
+              <h3 className="panelTitle" style={{ fontSize: "1.2rem", borderBottom: "none" }}>検出された想い</h3>
               <ul className="annotationList">
                 {annotations.map((annotation) => (
                   <li key={annotation.number} className="annotationItem">
