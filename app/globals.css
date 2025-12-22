@@ -1,20 +1,20 @@
 :root {
-  /* Brand Colors */
-  --color-white: #FFFFFF;
-  --color-text: #4A4A4A; /* Softer Black */
-  --color-text-light: #777777;
-  --color-accent: #F472B6; /* Soft Pink */
-  --color-border: #FBCFE8; /* Pinkish Border */
-  --color-bg-sub: #FFF0F5; /* Lavender Blush */
-  
+  /* Brand Colors - Based on makaninlabs brand-style.md */
+  --color-white: #ffffff;
+  --color-text: #333333; /* Dark Gray for readability */
+  --color-text-light: #666666;
+  --color-accent: #ffe600; /* Lemon Yellow */
+  --color-border: #e5e5e5;
+  --color-bg-sub: #f9f9f9;
+
   /* Semantic Colors */
   --primary: var(--color-accent);
-  --background: #FFF5F7; /* Pale Pink Background */
+  --background: var(--color-white);
   --card-bg: var(--color-white);
   --border-color: var(--color-border);
   --text-primary: var(--color-text);
   --text-secondary: var(--color-text-light);
-  --text-muted: #9CA3AF;
+  --text-muted: #999999;
 }
 
 * {
@@ -27,56 +27,58 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: "Yu Gothic Medium", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  letter-spacing: 0.04em;
+  font-family: "Noto Sans JP", "Yu Gothic", "Hiragino Kaku Gothic ProN",
+    sans-serif;
+  letter-spacing: 0.05em;
 }
 
 body {
   color: var(--text-primary);
   background: var(--background);
   min-height: 100vh;
-  line-height: 1.8;
+  line-height: 2; /* Increased line-height for "magazine" feel */
 }
 
 /* Container */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 8rem 2rem; /* Double whitespace (from 4rem to 8rem) */
 }
 
 /* Header */
 .header {
-  text-align: left;
-  margin-bottom: 4rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+  margin-bottom: 8rem; /* Double whitespace */
+  padding-bottom: 4rem;
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 500;
   color: var(--text-primary);
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .subtitle {
   color: var(--text-secondary);
-  font-size: 1rem;
+  font-size: 1.125rem;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 /* Main Layout */
 .main {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
-  gap: 4rem;
+  gap: 8rem; /* Double whitespace (from 4rem to 8rem) */
   align-items: start;
 }
 
 @media (max-width: 1024px) {
   .main {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 4rem;
   }
 }
 
@@ -87,54 +89,25 @@ body {
 
 /* Typography Utils */
 .font-serif {
-  font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "HGS Mincho E", "MS PMincho", "MS Mincho", serif;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
 }
 
 .panelTitle {
-  font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "HGS Mincho E", "MS PMincho", "MS Mincho", serif;
-  font-size: 1.5rem;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: 1.75rem;
   font-weight: bold;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
   color: var(--color-text);
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-}
-
-.marker-highlight {
-  position: relative;
-  display: inline-block;
-  z-index: 1;
-}
-
-.marker-highlight::after {
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  left: 0;
-  width: 100%;
-  height: 8px; /* Thickness of marker */
-  background-color: var(--color-accent);
-  opacity: 0.4;
-  z-index: -1;
-  transform: rotate(-1deg);
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.panel {
-  animation: fadeIn 0.4s ease-out forwards;
+  gap: 1rem;
 }
 
 .panelTitle::before {
   content: "";
   display: block;
   width: 4px;
-  height: 24px;
+  height: 28px;
   background: var(--color-accent);
 }
 
@@ -149,9 +122,9 @@ body {
 
 /* Error message */
 .error {
-  background: #FFF5F5;
-  border-left: 4px solid #FC8181;
-  color: #C53030;
+  background: #fff5f5;
+  border-left: 4px solid #fc8181;
+  color: #c53030;
   padding: 1rem;
   margin-bottom: 2rem;
 }
